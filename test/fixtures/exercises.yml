@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: MyText
+  exercise_type: MyText
 
 two:
-  type: MyText
+  exercise_type: MyText
