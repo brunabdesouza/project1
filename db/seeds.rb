@@ -13,3 +13,33 @@ workout4 = Workout.create! workout_type: 'Balance'
 puts "created #{Workout.count} workouts."
 
 print "Creating exercises..."
+
+Exercise.destroy_all
+
+exercise1 = Exercise.create! exercise_type: 'Run'
+exercise2 = Exercise.create! exercise_type: 'Squats'
+exercise3 = Exercise.create! exercise_type: 'Yoga'
+exercise4 = Exercise.create! exercise_type: 'Tree Pose'
+
+puts "created #{Exercise.count} exercises."
+
+workout1.exercises << exercise1
+workout2.exercises << exercise2
+workout3.exercises << exercise3
+workout4.exercises << exercise4
+
+puts "Testing workouts -< exercise associations:"
+puts "The exercise '#{Exercise.first.exercise_type}' belongs to the workout #{Workout.first.workout_type}"
+puts "The workout type #{Workout.first.workout_type} has exercise: '#{Exercise.first.exercise_type}' "
+puts "The workout type #{Workout.last.workout_type} has exercise: '#{Exercise.last.exercise_type}' "
+
+print "Creating users..."
+
+User.destroy_all
+
+user1 = User.create! email: 'bruna@gym.com', password: 'chicken', name: 'Bruna'
+user2 = User.create! email: 'marc@gym.com', password: 'chicken', name: 'Marc'
+user3 = User.create! email: 'elisa@gym.com', password: 'chicken', name: 'Elisa'
+user4 = User.create! email: 'hugo@gym.com', password: 'chicken', name: 'Hugo'
+
+puts "created #{User.count} users."
