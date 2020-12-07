@@ -1,0 +1,13 @@
+
+<h1><%= @user.name %></h1>
+
+<h2>
+  Your Current Training Plan: <%= @user.training_plans.last.title %>
+</h2>
+<% if @user.training_plans.last.user_id == @current_user.id %>
+<%= link_to 'Edit your Training Plan', edit_training_plan_path %>
+<% end %>
+
+<p>
+  Goal: <%= @user.training_plans.last.goal %>
+</p>

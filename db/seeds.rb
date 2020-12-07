@@ -43,3 +43,33 @@ user3 = User.create! email: 'elisa@gym.com', password: 'chicken', name: 'Elisa'
 user4 = User.create! email: 'hugo@gym.com', password: 'chicken', name: 'Hugo'
 
 puts "created #{User.count} users."
+
+print "Creating training plans..."
+
+TrainingPlan.destroy_all
+
+tplan1 = TrainingPlan.create! title: 'Weekly Workout', goal: 'Workout four times a week'
+tplan2 = TrainingPlan.create! title: 'Burning Abs', goal: 'Lose fat to show abs'
+tplan3 = TrainingPlan.create! title: 'Running', goal: 'Run a marathon'
+tplan4 = TrainingPlan.create! title: 'Yoga Relax', goal: 'Practice yoga for stress relief'
+
+puts "created #{TrainingPlan.count} training plans."
+
+
+puts "Testing training plans >--< workouts associations "
+tplan1.workouts << workout1 << workout3
+tplan2.workouts << workout2
+tplan3.workouts << workout4 << workout1
+tplan4.workouts << workout3
+
+
+puts "Testing users -< training_plan associations:"
+user1.training_plans << tplan1
+user2.training_plans << tplan4
+user3.training_plans << tplan2
+user4.training_plans << tplan3 << tplan4
+
+puts "The user #{User.first.name} has the training plan: #{User.first.training_plans.pluck(:title)}"
+puts "The user #{User.last.name} has the training plan: #{User.last.training_plans.pluck(:title)}"
+
+puts "The training plan #{TrainingPlan.last.title} belongs to #{User.last.name}."

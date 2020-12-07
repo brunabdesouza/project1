@@ -1,0 +1,16 @@
+<h2>Your Homepage</h2>
+
+
+<ul>
+
+<% @users.each do |user| %>
+
+<li>
+
+  <%= link_to user.name, user_path(user.id) %>
+
+</li>
+
+<% end %>
+
+</ul>
