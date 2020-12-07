@@ -1,1 +1,11 @@
+<h2>
+  Your Current Training Plan: <%= @current_user.training_plans.last.title %>
+</h2>
 
+<p>
+  Goal: <%= @current_user.training_plans.last.goal %>
+</p>
+
+
+
+<%= link_to 'Edit your Training Plan', edit_training_plan_path %>

@@ -1,4 +1,11 @@
 class TrainingPlansController < ApplicationController
+  def new
+    @training_plan = TrainingPlan.new
+  end
+
+  def create
+  end
+
   def index
   end
 
@@ -6,13 +13,8 @@ class TrainingPlansController < ApplicationController
     @training_plan = TrainingPlan.find params[:id]
   end
 
-  def new
-  end
-
-  def create
-  end
-
   def edit
+    
   end
 
   def update

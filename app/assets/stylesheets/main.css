@@ -1,0 +1,40 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(184, 238, 252);
+}
+
+.user {
+  text-align: right;
+}
+
+.hello {
+  text-align: center;
+}
+
+.name {
+  font-size: 30px;
+  text-align: center;
+}
+
+.first {
+  text-align: right;
+}
+
+#homepage {
+  flex-flow: column wrap;
+  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-evenly; */
+}
+
+#home1 {
+  border: 1px solid black;
+}
+
+#home2 {
+  border: 1px solid black;
+}
+
+#home3 {
+  border: 1px solid black;
+}

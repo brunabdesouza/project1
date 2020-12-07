@@ -1,13 +1,18 @@
+<div class="hello">
+<h1>My Homepage</h1>
+</div>
 
-<h1><%= @user.name %></h1>
+<%= link_to 'Edit Details', edit_user_path %>
 
-<h2>
-  Your Current Training Plan: <%= @user.training_plans.last.title %>
-</h2>
-<% if @user.training_plans.last.user_id == @current_user.id %>
-<%= link_to 'Edit your Training Plan', edit_training_plan_path %>
+<ul>
+<% @current_user.training_plans.each do |plan| %>
+
+<li>
+
+<%= link_to 'My Training Plan', training_plan_path(plan.id) %>
+
+</li>
+
 <% end %>
 
-<p>
-  Goal: <%= @user.training_plans.last.goal %>
-</p>
+</ul>
