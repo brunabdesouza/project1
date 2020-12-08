@@ -24,7 +24,10 @@ body {
   text-align: right;
 }
 
-.name {}
+.name a:link {
+  text-decoration: none;
+  color: black;
+}
 
 #homepage {
   flex-flow: column wrap;

@@ -1,7 +1,7 @@
 
- <% @current_user.training_plans.each do |plan| %>
+<% @current_user.training_plans.each do |plan| %>
 <h2>
-  Your Training Plan: <%= plan.title %>
+ Your Training Plan: <%= plan.title %>
 </h2>
 
 <%= link_to 'Edit your Plan', edit_training_plan_path(plan.id) %>

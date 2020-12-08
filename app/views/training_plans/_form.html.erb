@@ -8,6 +8,10 @@
  <%= f.text_field :goal %>
  <br>
 
+ <%= f.label :workouts %>
+ <%= f.collection_check_boxes :workout_ids, Workout.all, :workout_type, :workout_type %>
+ <br>
+
  <%= f.submit %>
 
  <% end %>

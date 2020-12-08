@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'workouts/new'
-  get 'workouts/create'
-  get 'workouts/index'
-  get 'workouts/show'
-  get 'workouts/edit'
-  get 'workouts/update'
-  get 'workouts/destroy'
   root to: 'pages#home'
 
   #Login/logout routes for
@@ -20,5 +13,8 @@ resources :users
 
 # create all & CRUD routes for TrainingPlan Model
 resources :training_plans
+
+# create all 7 CRUD routes for Workouts Model
+resources :workouts
 
 end # Routes

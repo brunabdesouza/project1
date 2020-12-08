@@ -25,6 +25,10 @@
       <h1><%= link_to "What Workout", root_path %></h1>
       </div>
 
+      <div>
+        <%= link_to 'Training Plan' %>
+      </div>
+
       <div class="user">
       <% if @current_user.present? %>
       Welcome, <%= @current_user.name %>
