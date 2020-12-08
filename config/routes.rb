@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'workouts/new'
+  get 'workouts/create'
+  get 'workouts/index'
+  get 'workouts/show'
+  get 'workouts/edit'
+  get 'workouts/update'
+  get 'workouts/destroy'
   root to: 'pages#home'
 
   #Login/logout routes for

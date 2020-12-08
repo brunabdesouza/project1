@@ -1,1 +1,10 @@
-<h1>Edit your Training Plan</h1>
+
+<h1>Training Plan: <%= @training_plan.title %></h1>
+
+<h3>
+  Goal: <%= @training_plan.goal %>
+</h3>
+
+<h2>Edit your Training Plan</h2>
+
+<%= render partial: 'form' %>

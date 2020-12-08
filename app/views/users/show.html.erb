@@ -2,14 +2,20 @@
 <h1>My Homepage</h1>
 </div>
 
-<%= link_to 'Edit Details', edit_user_path %>
+<div class="details">
+<%= link_to 'Edit my Details', edit_user_path %>
+
+<%= link_to 'Delete Account', root_path %></div>
+
+<%= link_to 'New Training Plan', new_training_plan_path %>
 
 <ul>
+
 <% @current_user.training_plans.each do |plan| %>
 
 <li>
 
-<%= link_to 'My Training Plan', training_plan_path(plan.id) %>
+<%= link_to plan.title, training_plan_path(plan.id) %>
 
 </li>
 

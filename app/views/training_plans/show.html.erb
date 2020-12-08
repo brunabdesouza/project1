@@ -1,11 +1,11 @@
+
+ <% @current_user.training_plans.each do |plan| %>
 <h2>
-  Your Current Training Plan: <%= @current_user.training_plans.last.title %>
+  Your Training Plan: <%= plan.title %>
 </h2>
 
-<p>
-  Goal: <%= @current_user.training_plans.last.goal %>
-</p>
+<%= link_to 'Edit your Plan', edit_training_plan_path(plan.id) %>
 
+<%= link_to 'Delete your Plan', training_plan_path %>
 
-
-<%= link_to 'Edit your Training Plan', edit_training_plan_path %>
+<% end %>

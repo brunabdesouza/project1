@@ -7,6 +7,10 @@ body {
   text-align: right;
 }
 
+.details {
+  text-align: right;
+}
+
 .hello {
   text-align: center;
 }
@@ -19,6 +23,8 @@ body {
 .first {
   text-align: right;
 }
+
+.name {}
 
 #homepage {
   flex-flow: column wrap;

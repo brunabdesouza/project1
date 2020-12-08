@@ -65,7 +65,7 @@ tplan4.workouts << workout3
 
 puts "Testing users -< training_plan associations:"
 user1.training_plans << tplan1
-user2.training_plans << tplan4
+user2.training_plans << tplan2
 user3.training_plans << tplan2
 user4.training_plans << tplan3 << tplan4
 
