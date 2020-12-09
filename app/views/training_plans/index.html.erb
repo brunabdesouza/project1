@@ -1,0 +1,11 @@
+<h2>My Training Plans</h2>
+
+<% @current_user.training_plans.each do |plan| %>
+<li>
+
+<%= link_to plan.title, training_plan_path(plan.id) %>
+
+</li>
+
+
+<% end %>

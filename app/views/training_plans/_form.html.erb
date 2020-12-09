@@ -9,7 +9,7 @@
  <br>
 
  <%= f.label :workouts %>
- <%= f.collection_check_boxes :workout_ids, Workout.all, :workout_type, :workout_type %>
+ <%= f.collection_check_boxes :workout_ids, @workout_templates, :id, :workout_type, include_hidden: false %>
  <br>
 
  <%= f.submit %>

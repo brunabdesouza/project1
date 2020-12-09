@@ -29,13 +29,6 @@ body {
   color: black;
 }
 
-#homepage {
-  flex-flow: column wrap;
-  justify-content: space-around;
-  /* display: flex;
-  justify-content: space-evenly; */
-}
-
 #home1 {
   border: 1px solid black;
 }
@@ -46,4 +39,8 @@ body {
 
 #home3 {
   border: 1px solid black;
+}
+
+.allhome {
+  display: grid;
 }

@@ -1,9 +1,9 @@
 class Workout < ApplicationRecord
 
-  has_and_belongs_to_many :training_plans
+  belongs_to :training_plan, optional: true
 
   has_many :users, through: 'training_plans'
 
-  has_many :exercises
+  has_and_belongs_to_many :exercises
 
 end

@@ -25,16 +25,15 @@
       <h1><%= link_to "What Workout", root_path %></h1>
       </div>
 
-      <div>
-        <%= link_to 'Training Plan' %>
-      </div>
-
       <div class="user">
       <% if @current_user.present? %>
       Welcome, <%= @current_user.name %>
 
       <%= link_to 'Logout', login_path, method: 'Delete' %></div>
 
+      <div>
+        <%= link_to 'My Training Plans', user_path(@current_user.id) %>
+      </div>
 
       <% else %>
       <div class="first"><%= link_to 'Login', login_path %>
@@ -42,8 +41,8 @@
       <%= link_to 'Sign Up', new_user_path %></div>
 
 
-      <% end %>
 
+      <% end %>
     </nav>
     <hr>
   </header>
