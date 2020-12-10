@@ -37,8 +37,9 @@ class TrainingPlansController < ApplicationController
 
   def edit
 
-    @workout_templates = Workout.where(training_plan_id: nil)
+    # @workout_templates = Workout.where(training_plan_id: nil)
     @training_plan = TrainingPlan.find params[:id]
+    @workout_templates = @training_plan.workouts
 
     redirect_to login_path unless @training_plan.user_id = @current_user.id
 
@@ -51,6 +52,23 @@ class TrainingPlansController < ApplicationController
     if training_plan.user_id != @current_user.id
       redirect_to login_path
     end # if condition
+
+
+
+    # training_plan.workouts.delete_all
+
+    if params[:training_plan][:workout_ids].present?
+      training_plan.workouts.each do |w|
+
+        w.destroy unless params[:training_plan][:workout_ids].include?(w.id.to_s)
+      end
+      # training_plan.workouts << Workout.find(params[:training_plan][:workout_ids])
+    else
+      # if the workout_ids are not present, that means the user has unchecked all of the checkboxes that's why we are destroying them.
+      training_plan.workouts.destroy_all
+    end
+
+
 
     training_plan.update training_plan_params
     redirect_to training_plan_path

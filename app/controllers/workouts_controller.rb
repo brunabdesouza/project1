@@ -23,11 +23,11 @@ class WorkoutsController < ApplicationController
   end
 
   def edit
-    
+
     @workout = Workout.find params[:id]
 
     redirect_to login_path unless @workout.user_id = @current_user.id
-
+    
   end
 
   def update

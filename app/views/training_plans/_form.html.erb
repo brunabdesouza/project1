@@ -12,7 +12,9 @@
 
  <div class="checkbox">
    <%= f.label :workouts %>
-   <%= f.collection_check_boxes :workout_ids, @workout_templates, :id, :workout_type, include_hidden: false, multiple: true %>
+   <%= f.collection_check_boxes :workout_ids, @workout_templates, :id, :workout_type, include_hidden: false do |b|
+   b.label { b.check_box(checked: @training_plan.workouts.include?(b.object)) + b.text }
+    end %>
    <br>
  </div>
   <br>
