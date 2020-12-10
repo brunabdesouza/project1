@@ -1,4 +1,4 @@
-<div class="hello"><h2>Login</h2></div>
+<div class="hello"><h2>Login</h2>
 
 <% if flash[:error] %>
   <br>
@@ -8,6 +8,7 @@
   <br>
   <br>
 <% end %>
+</div>
 
 <!-- use form_with for generic forms, i.e. forms not connected to a model -  then we use 'url: someurl' instead of 'model:' -->
 <%= form_with url:login_path, local: true do |f| %>

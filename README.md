@@ -8,11 +8,11 @@ Create a training plan to keep you motivated when it comes to exercising. You ca
 
 # My What Workout
 
-https://github.com/brunabdesouza/project1.git
+https://github.com/brunabdesouza/project1
 
-#Heroku
+# Heroku
 
-https://git.heroku.com/what-workout.git
+https://what-workout.herokuapp.com
 
 # Technologies Used
 
@@ -22,7 +22,7 @@ This project was create using **HTML**, **CSS** and **Ruby on Rails** and Active
 
 This app allows the user to create an account and also log in and out. I have created authentication parameters so only the user logged in can access all features of their accounts. Once logged in the user can create a new training plan and can add workouts to it as well as edit or delete their plan.
 
-#Known Bugs
+# Known Bugs
 
 There are still things that need to be fixed before the project is complete.
 
@@ -30,6 +30,6 @@ There are still things that need to be fixed before the project is complete.
 2. Add an option to customise what exercises they want to add to their workouts.
 3. Fix the option to delete the user when they want to delete their account.
 
-#Future Feature
+# Future Feature
 1. Customise the form fields so they are not visible, this will add a more modern look to the website.
 2. Let users pick a token that will be their profile picture.
