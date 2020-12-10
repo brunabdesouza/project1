@@ -56,9 +56,8 @@ class UsersController < ApplicationController
 
   def destroy
 
-    @user = User.destroy params[:id]
+    User.destroy params[:id]
 
-    @user.destroy user_params
     redirect_to root_path
 
   end

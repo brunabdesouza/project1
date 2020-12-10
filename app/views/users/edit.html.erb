@@ -1,7 +1,8 @@
-<h2>Edit your details</h2>
+<div class="hello"><h2>Edit your details</h2></div>
 
 <%= form_with model: @user, local: true, html: { multipart: true } do |f| %>
 
+<div class="formbody">
 <%= f.label :name%>
 <%= f.text_field :name %>
 <br>
@@ -15,5 +16,5 @@
 <br>
 
 <%= f.submit 'Update' %>
-
+</div>
 <% end %>
