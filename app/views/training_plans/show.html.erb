@@ -6,15 +6,28 @@ Training Plan: <%= @training_plan.title %>
   Goal: <%= @training_plan.goal %>
 </h3>
 
-<p>Workout Type:
 
- <% @training_plan.workouts.each do |w|%>
+  <p>Workout Type:
+    <ul>
+     <% @training_plan.workouts.each do |w|%>
+       <li>
+         <%= w.workout_type %>
+       </li>
+     </ul>
+  </p>
 
- <%= link_to w.workout_type, workout_path(w.id) %>
-
-<% end %>
-</p>
+     <p>Exercise Type:
+        <ul>
+           <% w.exercises.each do |e| %>
+          <li>
+             <%= e.exercise_type %>
+          </li>
+          <% end %>
+        </ul>
+      </p>
+  <% end %>
 <br>
+
 
 
 <%= link_to 'Edit Plan', edit_training_plan_path(@training_plan.id) %>
