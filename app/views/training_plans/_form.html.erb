@@ -1,6 +1,7 @@
 <%= form_with model: @training_plan, local: true do |f| %>
 
- <%= f.label :title %>
+<div class="formbody">
+<%= f.label :title %>
  <%= f.text_field :title %>
  <br>
 
@@ -15,3 +16,4 @@
  <%= f.submit %>
 
  <% end %>
+</div>

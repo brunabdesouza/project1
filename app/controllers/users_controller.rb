@@ -6,20 +6,13 @@ class UsersController < ApplicationController
 
   def create
 
-    @user = User.new user_params
-
-    # check for file upload and handle upload if present
-    if params[:user][:image].present?
-      response = Cloudinary::Uploader.upload params[:user][:image]
-      p response
-      # save response ID into the appropriate field of our new model object
-      @user.image = response["public_id"]
-  end
+    @user = User.create user_params
 
     #did the above .create actually save to the DB or not?
     if @user.persisted?
         #log the user automatically so they dont have to enter their details again
         session[:user_id] = @user.id
+
 
         redirect_to user_path(@user.id)
 

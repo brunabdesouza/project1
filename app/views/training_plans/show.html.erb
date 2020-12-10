@@ -1,15 +1,15 @@
 <h2>
-<%= @training_plan.title %>
+Training Plan: <%= @training_plan.title %>
 </h2>
 
 <h3>
-  <%= @training_plan.goal %>
+  Goal: <%= @training_plan.goal %>
 </h3>
 
- <% @training_plan.workouts.each do |w
-|%>
-
-<%= w.workout_type %>
+ <% @training_plan.workouts.each do |w|%>
+<h4>
+Workout Type: <%= w.workout_type %>
+</h4>
 <br>
 <% end %>
 <%= link_to 'Edit Plan', edit_training_plan_path(@training_plan.id) %>
