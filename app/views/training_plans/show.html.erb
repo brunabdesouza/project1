@@ -1,22 +1,24 @@
-<h2>
+<div class="hello"><h2>
 Training Plan: <%= @training_plan.title %>
 </h2>
 
 <h3>
   Goal: <%= @training_plan.goal %>
 </h3>
+</div>
 
-
-  <p>Workout Type:
+<div class="lists">
+  <div class="first_list"><p>Workout Type:
     <ul>
      <% @training_plan.workouts.each do |w|%>
        <li>
          <%= w.workout_type %>
        </li>
      </ul>
-  </p>
+    </p>
+  </div>
 
-     <p>Exercise Type:
+     <div class="second_list"><p>Exercise Type:
         <ul>
            <% w.exercises.each do |e| %>
           <li>
@@ -24,12 +26,15 @@ Training Plan: <%= @training_plan.title %>
           </li>
           <% end %>
         </ul>
-      </p>
+        </p>
+      </div>
   <% end %>
 <br>
 
 
-
+<div class="edit_delete">
 <%= link_to 'Edit Plan', edit_training_plan_path(@training_plan.id) %>
 
 <%= link_to 'Delete Plan', training_plan_path(@training_plan.id), method: 'delete' %>
+</div>
+</div>

@@ -1,14 +1,21 @@
 body {
   font-family: 'Raleway', sans-serif;
-  background-color: rgb(184, 238, 252);
+  background-color: rgb(238, 181, 236);
+}
+
+* {
+  text-decoration: none;
+  color: black;
 }
 
 .user {
   text-align: right;
+  margin-right: 10px;
 }
 
 .details {
   text-align: right;
+  margin-right: 10px;
 }
 
 .hello {
@@ -22,9 +29,10 @@ body {
 
 .first {
   text-align: right;
+  margin-right: 10px;
 }
 
-.name a:link {
+.name {
   text-decoration: none;
 }
 
@@ -32,12 +40,44 @@ body {
   text-align: center;
 }
 
-.allhome {
+.new_plan {
+  margin-left: 10px;
+}
+
+.allhome, .lists, .my_workouts {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
+}
+
+.each_workout {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  text-align: center;
+}
+
+.first_list {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  text-align: center;
+}
+
+.second_list {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  text-align: center;
+}
+
+.edit_delete {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  text-align: center;
+}
+
+.my_plans {
+  margin-left: 10px;
 }
 
 #home1 {

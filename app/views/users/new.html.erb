@@ -1,4 +1,4 @@
-<h2>Create an Account</h2>
+<div class="hello"><h2>Create an Account</h2></div>
 
 <% if @user.errors.full_messages.any? %>
 <strong>Please correct the following errors:</strong>
@@ -12,6 +12,7 @@
 
 <%= form_with model: @user, local: true do |f| %>
 
+<div class="formbody">
 <%= f.label :name %>
 <%= f.text_field :name %>
 <br>
@@ -29,5 +30,6 @@
 <br>
 
 <%= f.submit 'Sign Up' %>
+</div>
 
 <% end %>

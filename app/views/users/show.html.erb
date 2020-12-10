@@ -1,24 +1,31 @@
 <div class="hello">
-<h1>My Home</h1>
+  <h1>My Home</h1>
 </div>
 
   <div class="details">
-  <%= link_to 'Edit my Details', edit_user_path %>
+    <%= link_to 'Edit my Details', edit_user_path %>
 
-  <%= link_to 'Delete Account', root_path %></div>
+    <%= link_to 'Delete Account', root_path %>
+  </div>
 
-<%= link_to 'New Training Plan', new_training_plan_path %>
+  <div class="new_plan">
+    <%= link_to 'New Training Plan', new_training_plan_path %>
+  </div>
 
-<ul>
+<div class="my_workouts">
+  <div class="each_workout">
+    <ul>
+        <% @current_user.training_plans.each do |plan| %>
 
-<% @current_user.training_plans.each do |plan| %>
+      <li>
 
-<li>
+        <%= link_to plan.title, training_plan_path(plan.id) %>
 
-<%= link_to plan.title, training_plan_path(plan.id) %>
+      </li>
 
-</li>
+        <% end %>
 
-<% end %>
+    </ul>
+  </div>
 
-</ul>
+</div>
