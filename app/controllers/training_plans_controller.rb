@@ -37,8 +37,9 @@ class TrainingPlansController < ApplicationController
 
   def edit
 
+    @workout_templates = Workout.where(training_plan_id: nil)
     @training_plan = TrainingPlan.find params[:id]
-    @workout_templates = @training_plan.workouts + Workout.where(training_plan_id: nil)
+
     redirect_to login_path unless @training_plan.user_id = @current_user.id
 
   end

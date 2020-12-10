@@ -17,4 +17,7 @@ resources :training_plans
 # create all 7 CRUD routes for Workouts Model
 resources :workouts
 
+# create all 7 CRUD routes for Exercises Model
+resources :exercises
+
 end # Routes

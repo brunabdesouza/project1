@@ -6,12 +6,17 @@ Training Plan: <%= @training_plan.title %>
   Goal: <%= @training_plan.goal %>
 </h3>
 
+<p>Workout Type:
+
  <% @training_plan.workouts.each do |w|%>
-<h4>
-Workout Type: <%= w.workout_type %>
-</h4>
-<br>
+
+ <%= link_to w.workout_type, workout_path(w.id) %>
+
 <% end %>
+</p>
+<br>
+
+
 <%= link_to 'Edit Plan', edit_training_plan_path(@training_plan.id) %>
 
 <%= link_to 'Delete Plan', training_plan_path(@training_plan.id), method: 'delete' %>

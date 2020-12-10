@@ -1,19 +1,24 @@
 <%= form_with model: @training_plan, local: true do |f| %>
 
 <div class="formbody">
-<%= f.label :title %>
- <%= f.text_field :title %>
- <br>
+   <%= f.label :title %>
+   <%= f.text_field :title %>
+   <br>
 
- <%= f.label :goal %>
- <%= f.text_field :goal %>
- <br>
+   <%= f.label :goal %>
+   <%= f.text_field :goal %>
+   <br>
+</div>
 
- <%= f.label :workouts %>
- <%= f.collection_check_boxes :workout_ids, @workout_templates, :id, :workout_type, include_hidden: false %>
- <br>
+ <div class="checkbox">
+   <%= f.label :workouts %>
+   <%= f.collection_check_boxes :workout_ids, @workout_templates, :id, :workout_type, include_hidden: false, multiple: true %>
+   <br>
+ </div>
+  <br>
 
- <%= f.submit %>
+ <div class="formbody">
+  <%= f.submit %>
+ </div>
 
  <% end %>
-</div>

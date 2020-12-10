@@ -66,6 +66,10 @@ body {
   height: 2.5rem;
 }
 
+.checkbox {
+  text-align: center;
+}
+
 .editplan {
   text-align: center;
 }
