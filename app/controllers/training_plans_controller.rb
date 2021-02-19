@@ -90,35 +90,3 @@ class TrainingPlansController < ApplicationController
 
   end #training_plan_params
 end 
-
-
-
-
-
-def clone
-    # Retrieve the workshop the user wants to clone
-    original_workshop = Workshop.find params[:id]
-​
-    # Clone the workshop using duplicate
-    clone_workshop = original_workshop.dup
-​
-    # Assign the clone to the current user
-    clone_workshop.user_id = @current_user.id
-
-    # Duplicate associated tasks and assign them
-    original_workshop.tasks.each do |task|
-      # Duplicate task
-      clone_task = task.dup
-      # Set user id to current user and workshop id
-      clone_task.user_id = @current_user.id
-      clone_task.workshop = clone_workshop
-      # Commit to database
-      clone_task.save
-    end
-​
-    # Commit to the database
-    clone_workshop.save
-​
-    # Show workshop -> Created by should be current user instead of original creator
-    redirect_to workshop_path(clone_workshop.id)
-  end
